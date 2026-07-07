@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <radialGradient id="bloom" cx="32%" cy="24%" r="76%">
+    <radialGradient id="bloom" cx="30%" cy="24%" r="78%">
       <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="0.35" stop-color="#cdeffa"/>
-      <stop offset="0.66" stop-color="#71b8da"/>
-      <stop offset="1" stop-color="#2f6f95"/>
+      <stop offset="0.34" stop-color="#f8f4e8"/>
+      <stop offset="0.68" stop-color="#e7cf83"/>
+      <stop offset="1" stop-color="#a9832a"/>
     </radialGradient>
   </defs>
   <circle cx="32" cy="32" r="28" fill="url(#bloom)"/>
-  <circle cx="24" cy="20" r="6" fill="#fffefd" opacity="0.9"/>
+  <circle cx="24" cy="20" r="6" fill="#fffefd" opacity="0.92"/>
 </svg>
