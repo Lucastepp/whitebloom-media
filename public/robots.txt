@@ -1,0 +1,6 @@
+# robots.txt - White Bloom Media
+
+User-agent: *
+Allow: /
+
+Sitemap: https://white-bloom-media.com/sitemap.xml
