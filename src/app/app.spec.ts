@@ -18,6 +18,6 @@ describe('App', () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Films that keep the room alive');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Vertical content for places');
   });
 });
