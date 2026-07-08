@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
   <defs>
-    <radialGradient id="base" cx="33%" cy="34%" r="88%">
-      <stop offset="0" stop-color="#fffef4"/>
-      <stop offset="0.16" stop-color="#fff1a1"/>
-      <stop offset="0.34" stop-color="#efd05d"/>
-      <stop offset="0.52" stop-color="#d4a33a"/>
-      <stop offset="0.69" stop-color="#a86c20"/>
-      <stop offset="0.84" stop-color="#6d3c10"/>
-      <stop offset="1" stop-color="#2a1608"/>
+    <radialGradient id="base" cx="35%" cy="30%" r="89%">
+      <stop offset="0" stop-color="#fffdf1"/>
+      <stop offset="0.12" stop-color="#ffefa0"/>
+      <stop offset="0.26" stop-color="#edc044"/>
+      <stop offset="0.39" stop-color="#ca7d1c"/>
+      <stop offset="0.55" stop-color="#8f420d"/>
+      <stop offset="0.72" stop-color="#532006"/>
+      <stop offset="1" stop-color="#1d0b02"/>
     </radialGradient>
     <radialGradient id="leftGlow" cx="24%" cy="39%" r="72%">
-      <stop offset="0" stop-color="#fff9d5" stop-opacity=".72"/>
-      <stop offset=".34" stop-color="#ffe98e" stop-opacity=".34"/>
+      <stop offset="0" stop-color="#fff9d5" stop-opacity="0.48"/>
+      <stop offset=".34" stop-color="#ffe98e" stop-opacity="0.14"/>
       <stop offset=".72" stop-color="#dba33b" stop-opacity=".08"/>
       <stop offset="1" stop-color="#dba33b" stop-opacity="0"/>
     </radialGradient>
@@ -28,9 +28,9 @@
       <stop offset="1" stop-color="#281307" stop-opacity=".72"/>
     </linearGradient>
     <radialGradient id="bottomBrown" cx="50%" cy="104%" r="76%">
-      <stop offset="0" stop-color="#281307" stop-opacity=".82"/>
-      <stop offset=".34" stop-color="#70400f" stop-opacity=".44"/>
-      <stop offset=".66" stop-color="#a66b1e" stop-opacity=".12"/>
+      <stop offset="0" stop-color="#281307" stop-opacity="0.95"/>
+      <stop offset=".34" stop-color="#70400f" stop-opacity="0.62"/>
+      <stop offset=".66" stop-color="#a66b1e" stop-opacity="0.18"/>
       <stop offset="1" stop-color="#a66b1e" stop-opacity="0"/>
     </radialGradient>
     <clipPath id="clip"><circle cx="80" cy="80" r="70"/></clipPath>
@@ -39,14 +39,15 @@
   <g clip-path="url(#clip)">
     <circle cx="80" cy="80" r="72" fill="url(#leftGlow)"/>
     <ellipse cx="80" cy="139" rx="82" ry="58" fill="url(#bottomBrown)"/>
-    <circle cx="80" cy="80" r="72" fill="url(#bottomShade)" opacity=".62"/>
-    <path d="M92 172 172 92v80z" fill="#4a260c" opacity=".14"/>
-    <path d="M0 172 172 0v42L58 172z" fill="#fff2a8" opacity=".18"/>
-    <path d="M-16 108 108 -16h56L8 172H-16z" fill="#fffbe2" opacity=".07"/>
-    <circle cx="47" cy="44" r="50" fill="url(#flare)"/>
-    <circle cx="47" cy="44" r="18" fill="#fffdf0" opacity=".88"/>
-    <circle cx="65" cy="60" r="6" fill="#ffffff" opacity=".58"/>
-    <path d="M20 58c35-24 82-23 118 5" fill="none" stroke="#fff0ad" stroke-opacity=".22" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="80" cy="80" r="72" fill="url(#bottomShade)" opacity="0.68"/>
+    <path d="M82 172 172 82v90z" fill="#2d0e03" opacity="0.32"/>
+    <path d="M0 172 172 0v34L54 172z" fill="#fff0a6" opacity="0.22"/>
+    <path d="M52 172 172 52v44L96 172z" fill="#8c3e0b" opacity="0.38"/>
+    <path d="M-16 108 108 -16h56L8 172H-16z" fill="#fffbe2" opacity="0.06"/>
+    <circle cx="48" cy="43" r="50" fill="url(#flare)"/>
+    <circle cx="48" cy="43" r="19" fill="#fffdf0" opacity=".88"/>
+    <circle cx="66" cy="60" r="6.5" fill="#ffffff" opacity=".58"/>
+    <path d="M20 58c38-25 84-23 118 6" fill="none" stroke="#fff0ad" stroke-opacity="0.18" stroke-width="4" stroke-linecap="round"/>
   </g>
   <circle cx="80" cy="80" r="70" fill="none" stroke="#7b5318" stroke-opacity=".18" stroke-width="2"/>
 </svg>
