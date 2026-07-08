@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 180" role="img" aria-labelledby="title">
+  <title>White Bloom Media horizontal logo all white</title>
+  <g transform="translate(24 20) scale(.875)">
+    <defs><clipPath id="monoClip"><circle cx="80" cy="80" r="70"/></clipPath></defs>
+        <circle cx="80" cy="80" r="70" fill="#ffffff" opacity=".98"/>
+        <path d="M12 172 172 12v40L58 172z" fill="#ffffff" opacity=".34" clip-path="url(#monoClip)"/>
+        <path d="M34 172 172 34v44L82 172z" fill="#ffffff" opacity=".18" clip-path="url(#monoClip)"/>
+        <circle cx="50" cy="42" r="19" fill="#ffffff" opacity=".76"/>
+        <circle cx="68" cy="58" r="6.5" fill="#ffffff" opacity=".48"/>
+        <path d="M22 54c40-24 86-20 120 14" fill="none" stroke="#ffffff" stroke-opacity=".28" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="80" cy="80" r="70" fill="none" stroke="#ffffff" stroke-opacity=".28" stroke-width="2"/>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" text-rendering="geometricPrecision">
+    <text x="182" y="75" fill="#ffffff" font-size="33" font-weight="800" letter-spacing="7.2">WHITE BLOOM</text>
+    <text x="183" y="113" fill="#f1f1ee" font-size="21" font-weight="700" letter-spacing="8.8">MEDIA</text>
+  </g>
+</svg>

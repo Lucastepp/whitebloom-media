@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 560" role="img" aria-labelledby="title">
+  <title>White Bloom Media stacked logo blue silver</title>
+  <g transform="translate(160 8)">
+    <g transform="scale(1.875)">
+          <defs>
+              <radialGradient id="stackMarkBase" cx="33%" cy="31%" r="92%">
+                <stop offset="0" stop-color="#fffef4"/>
+                <stop offset="0.12" stop-color="#fff1a1"/>
+                <stop offset="0.27" stop-color="#f3d35d"/>
+                <stop offset="0.44" stop-color="#d49a2e"/>
+                <stop offset="0.62" stop-color="#a8641a"/>
+                <stop offset="0.78" stop-color="#67320d"/>
+                <stop offset="1" stop-color="#251205"/>
+              </radialGradient>
+              <radialGradient id="stackMarkLeftGlow" cx="24%" cy="39%" r="72%">
+                <stop offset="0" stop-color="#fff9d5" stop-opacity="0.58"/>
+                <stop offset=".34" stop-color="#ffe98e" stop-opacity="0.24"/>
+                <stop offset=".72" stop-color="#dba33b" stop-opacity=".08"/>
+                <stop offset="1" stop-color="#dba33b" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="stackMarkFlare" cx="31%" cy="30%" r="42%">
+                <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/>
+                <stop offset=".24" stop-color="#fffce7" stop-opacity=".56"/>
+                <stop offset=".62" stop-color="#ffe88d" stop-opacity=".16"/>
+                <stop offset="1" stop-color="#ffe88d" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="stackMarkBottomShade" x1="80" y1="38" x2="80" y2="170" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#4b260a" stop-opacity="0"/>
+                <stop offset=".5" stop-color="#70400f" stop-opacity=".04"/>
+                <stop offset=".74" stop-color="#74410f" stop-opacity=".24"/>
+                <stop offset="1" stop-color="#281307" stop-opacity=".72"/>
+              </linearGradient>
+              <radialGradient id="stackMarkBottomBrown" cx="50%" cy="104%" r="76%">
+                <stop offset="0" stop-color="#281307" stop-opacity="0.92"/>
+                <stop offset=".34" stop-color="#70400f" stop-opacity="0.55"/>
+                <stop offset=".66" stop-color="#a66b1e" stop-opacity="0.16"/>
+                <stop offset="1" stop-color="#a66b1e" stop-opacity="0"/>
+              </radialGradient>
+              <clipPath id="stackMarkClip"><circle cx="80" cy="80" r="70"/></clipPath>
+            </defs>
+            <circle cx="80" cy="80" r="70" fill="url(#stackMarkBase)"/>
+            <g clip-path="url(#stackMarkClip)">
+              <circle cx="80" cy="80" r="72" fill="url(#stackMarkLeftGlow)"/>
+              <ellipse cx="80" cy="139" rx="82" ry="58" fill="url(#stackMarkBottomBrown)"/>
+              <circle cx="80" cy="80" r="72" fill="url(#stackMarkBottomShade)" opacity="0.62"/>
+              <path d="M92 172 172 92v80z" fill="#3a1706" opacity="0.28"/>
+              <path d="M12 172 172 12v40L58 172z" fill="#fff2a8" opacity="0.28"/>
+              <path d="M34 172 172 34v44L82 172z" fill="#b36a18" opacity="0.22"/>
+              <path d="M-16 108 108 -16h56L8 172H-16z" fill="#fffbe2" opacity="0.1"/>
+              <circle cx="50" cy="42" r="50" fill="url(#stackMarkFlare)"/>
+              <circle cx="50" cy="42" r="19" fill="#fffdf0" opacity=".88"/>
+              <circle cx="68" cy="58" r="6.5" fill="#ffffff" opacity=".58"/>
+              <path d="M22 54c40-24 86-20 120 14" fill="none" stroke="#fff0ad" stroke-opacity="0.22" stroke-width="4" stroke-linecap="round"/>
+            </g>
+            <circle cx="80" cy="80" r="70" fill="none" stroke="#7b5318" stroke-opacity=".18" stroke-width="2"/>
+          
+        </g>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" text-rendering="geometricPrecision" text-anchor="middle">
+    <text x="310" y="388" fill="#65717b" font-size="38" font-weight="800" letter-spacing="8.8">WHITE BLOOM</text>
+    <text x="310" y="434" fill="#aeb6ba" font-size="23" font-weight="700" letter-spacing="10.5">MEDIA</text>
+  </g>
+</svg>
