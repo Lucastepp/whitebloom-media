@@ -560,10 +560,18 @@ h1 {
 
 .film-rail {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   align-items: stretch;
   perspective: 1200px;
+}
+
+.shorts-showcase {
+  margin-top: 116px;
+}
+
+.shorts-preview-grid {
+  margin-bottom: 74px;
 }
 
 .film-card {
@@ -596,15 +604,6 @@ h1 {
 .film-card:nth-child(3) {
   min-height: 470px;
   transform: rotate(2.4deg);
-}
-
-.film-card:nth-child(4) {
-  min-height: 450px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0 44%, rgba(255, 255, 255, 0.82) 100%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.94), rgba(241, 220, 157, 0.5), rgba(80, 52, 19, 0.34)),
-    var(--silver-soft);
-  transform: rotate(-1deg);
 }
 
 .film-card::before {
@@ -664,6 +663,121 @@ h1 {
   margin: 13px 0 0;
   color: var(--ink-soft);
   line-height: 1.5;
+}
+
+.short-stories {
+  display: grid;
+  gap: clamp(56px, 8vw, 96px);
+}
+
+.short-story {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.58fr);
+  gap: clamp(34px, 7vw, 90px);
+  align-items: center;
+}
+
+.short-story::before {
+  position: absolute;
+  inset: 10% auto auto 42%;
+  width: min(38vw, 520px);
+  height: min(38vw, 520px);
+  z-index: -1;
+  border: 1px solid rgba(200, 168, 90, 0.14);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 38% 35%, rgba(255, 255, 255, 0.88), transparent 38%),
+    conic-gradient(from 135deg, rgba(255, 255, 255, 0), rgba(201, 205, 208, 0.28), rgba(200, 168, 90, 0.22), rgba(255, 255, 255, 0));
+  content: '';
+}
+
+.short-story-reverse {
+  grid-template-columns: minmax(280px, 0.58fr) minmax(0, 0.92fr);
+}
+
+.short-story-reverse .short-copy {
+  grid-column: 2;
+}
+
+.short-story-reverse .short-phone {
+  grid-column: 1;
+  grid-row: 1;
+  justify-self: start;
+}
+
+.short-copy {
+  max-width: 610px;
+}
+
+.short-copy span {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--gold-deep);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.short-copy h3 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 5.2vw, 5.8rem);
+  font-weight: 600;
+  line-height: 0.92;
+}
+
+.short-copy p {
+  max-width: 520px;
+  margin: 24px 0 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  line-height: 1.78;
+}
+
+.short-copy .button {
+  width: fit-content;
+  margin-top: 30px;
+}
+
+.short-phone {
+  position: relative;
+  width: min(360px, 100%);
+  aspect-ratio: 9 / 16;
+  justify-self: end;
+  overflow: hidden;
+  background:
+    linear-gradient(160deg, rgba(23, 21, 18, 0.98), rgba(57, 46, 31, 0.96)),
+    var(--charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 28px;
+  box-shadow:
+    0 34px 90px rgba(68, 60, 45, 0.22),
+    inset 0 0 0 8px rgba(8, 8, 8, 0.95);
+}
+
+.short-phone::before {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  z-index: 2;
+  width: 88px;
+  height: 18px;
+  border-radius: 999px;
+  background: rgba(8, 8, 8, 0.96);
+  transform: translateX(-50%);
+  content: '';
+}
+
+.short-phone iframe {
+  position: absolute;
+  inset: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  border: 0;
+  border-radius: 22px;
+  background: #080808;
 }
 
 .positioning {
@@ -973,7 +1087,9 @@ h1 {
 
   .hero,
   .positioning,
-  .contact {
+  .contact,
+  .short-story,
+  .short-story-reverse {
     grid-template-columns: 1fr;
   }
 
@@ -1013,6 +1129,18 @@ h1 {
   .concept-image-card:nth-child(3) {
     min-height: 360px;
     transform: none;
+  }
+
+  .short-story-reverse .short-copy,
+  .short-story-reverse .short-phone {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .short-phone,
+  .short-story-reverse .short-phone {
+    width: min(390px, 100%);
+    justify-self: center;
   }
 }
 
@@ -1089,6 +1217,30 @@ h1 {
   .film-card:nth-child(2),
   .film-card:nth-child(3) {
     min-height: 340px;
+  }
+
+  .shorts-preview-grid {
+    margin-bottom: 54px;
+  }
+
+  .short-stories {
+    gap: 70px;
+  }
+
+  .short-copy h3 {
+    font-size: clamp(2.65rem, 14vw, 4.1rem);
+  }
+
+  .short-copy .button {
+    width: 100%;
+  }
+
+  .short-phone {
+    border-radius: 24px;
+  }
+
+  .short-phone iframe {
+    border-radius: 18px;
   }
 
   .site-footer {
