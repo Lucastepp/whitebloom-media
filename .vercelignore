@@ -1,0 +1,8 @@
+node_modules
+dist
+.angular
+coverage
+brand-export
+*.log
+npm-debug.log
+yarn-error.log
