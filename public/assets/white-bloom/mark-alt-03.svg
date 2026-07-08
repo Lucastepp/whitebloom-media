@@ -1,21 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
   <defs>
-    <radialGradient id="g" cx="36%" cy="28%" r="88%">
-      <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="0.2" stop-color="#f8f6ec"/>
-      <stop offset="0.48" stop-color="#e5c260"/>
-      <stop offset="0.8" stop-color="#936520"/>
-      <stop offset="1" stop-color="#2d1d0e"/>
+    <radialGradient id="base" cx="36%" cy="27%" r="90%">
+      <stop offset="0" stop-color="#fffef2"/>
+      <stop offset="0.18" stop-color="#fff2a8"/>
+      <stop offset="0.39" stop-color="#eac65a"/>
+      <stop offset="0.58" stop-color="#c99331"/>
+      <stop offset="0.78" stop-color="#80511a"/>
+      <stop offset="1" stop-color="#2b190b"/>
     </radialGradient>
-    <clipPath id="c"><circle cx="80" cy="80" r="70"/></clipPath>
+    <radialGradient id="flare" cx="30%" cy="22%" r="44%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".94"/>
+      <stop offset=".26" stop-color="#fff8cf" stop-opacity=".52"/>
+      <stop offset=".62" stop-color="#ffe68b" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#ffe68b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass" x1="12" y1="18" x2="148" y2="142" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fffbea" stop-opacity=".58"/>
+      <stop offset=".48" stop-color="#f4cf63" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#5f3912" stop-opacity=".38"/>
+    </linearGradient>
+    <clipPath id="clip"><circle cx="80" cy="80" r="70"/></clipPath>
   </defs>
-  <circle cx="80" cy="80" r="70" fill="url(#g)"/>
-  <g clip-path="url(#c)">
-    <path d="M10 150 150 10v52L62 150z" fill="#fff7d1" opacity=".58"/>
-    <path d="M-8 70 70 -8h34L-8 104z" fill="#ffffff" opacity=".58"/>
-    <path d="M96 160 160 96v64z" fill="#4a3015" opacity=".62"/>
+  <circle cx="80" cy="80" r="70" fill="url(#base)"/>
+  <g clip-path="url(#clip)">
+    <path d="M6 150 150 6v54L60 168z" fill="#fff7c8" opacity=".34"/>
+    <path d="M-10 74 74 -10h44L-10 118z" fill="#e6b33d" opacity=".2"/>
+    <path d="M100 168 168 100v68z" fill="#4a2b10" opacity=".36"/>
+    <circle cx="54" cy="42" r="48" fill="url(#flare)"/>
+    <circle cx="54" cy="42" r="18" fill="#fffdf2" opacity=".84"/>
+    <circle cx="73" cy="58" r="6" fill="#fff8d0" opacity=".54"/>
+    <path d="M24 60c32-30 78-34 118-8" fill="none" stroke="#fff4bd" stroke-opacity=".24" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="80" cy="80" r="62" fill="url(#glass)" opacity=".18"/>
   </g>
-  <circle cx="55" cy="43" r="16" fill="#fff" opacity=".82"/>
-  <circle cx="80" cy="80" r="34" fill="#fff" opacity=".1" stroke="#fff" stroke-opacity=".42" stroke-width="2"/>
-  <circle cx="80" cy="80" r="70" fill="none" stroke="#7c5a1f" stroke-opacity=".2" stroke-width="2"/>
+  <circle cx="80" cy="80" r="70" fill="none" stroke="#8a601f" stroke-opacity=".22" stroke-width="2"/>
 </svg>

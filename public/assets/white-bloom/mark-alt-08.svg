@@ -1,21 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
   <defs>
-    <linearGradient id="g" x1="14" x2="144" y1="24" y2="132">
-      <stop offset="0" stop-color="#ffffff"/>
-      <stop offset="0.25" stop-color="#f8edbd"/>
-      <stop offset="0.58" stop-color="#b9822d"/>
-      <stop offset="1" stop-color="#2d1c0d"/>
+    <radialGradient id="base" cx="38%" cy="29%" r="91%">
+      <stop offset="0" stop-color="#fffef2"/>
+      <stop offset="0.18" stop-color="#fff2a8"/>
+      <stop offset="0.39" stop-color="#eac65a"/>
+      <stop offset="0.58" stop-color="#c99331"/>
+      <stop offset="0.78" stop-color="#80511a"/>
+      <stop offset="1" stop-color="#2b190b"/>
+    </radialGradient>
+    <radialGradient id="flare" cx="30%" cy="22%" r="44%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".94"/>
+      <stop offset=".26" stop-color="#fff8cf" stop-opacity=".52"/>
+      <stop offset=".62" stop-color="#ffe68b" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#ffe68b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass" x1="12" y1="18" x2="148" y2="142" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fffbea" stop-opacity=".58"/>
+      <stop offset=".48" stop-color="#f4cf63" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#5f3912" stop-opacity=".38"/>
     </linearGradient>
-    <clipPath id="c"><circle cx="80" cy="80" r="70"/></clipPath>
+    <clipPath id="clip"><circle cx="80" cy="80" r="70"/></clipPath>
   </defs>
-  <circle cx="80" cy="80" r="70" fill="url(#g)"/>
-  <g clip-path="url(#c)">
-    <path d="M-6 132 132 -6h28L22 160H-6z" fill="#fffef7" opacity=".42"/>
-    <path d="M-8 48 48 -8h34L-8 82z" fill="#ffffff" opacity=".5"/>
-    <path d="M84 160 160 84v76z" fill="#553715" opacity=".48"/>
-    <path d="M76 -10 170 84v28L48 -10z" fill="#d9dddc" opacity=".34"/>
+  <circle cx="80" cy="80" r="70" fill="url(#base)"/>
+  <g clip-path="url(#clip)">
+    <path d="M-12 112 112 -12h42L26 168H-12z" fill="#fff7c8" opacity=".34"/>
+    <path d="M82 -10 170 78v38L42 -10z" fill="#e6b33d" opacity=".2"/>
+    <path d="M108 168 168 108v60z" fill="#4a2b10" opacity=".36"/>
+    <circle cx="56" cy="45" r="48" fill="url(#flare)"/>
+    <circle cx="56" cy="45" r="16" fill="#fffdf2" opacity=".84"/>
+    <circle cx="75" cy="61" r="6" fill="#fff8d0" opacity=".54"/>
+    <path d="M28 66c30-30 78-34 116-10" fill="none" stroke="#fff4bd" stroke-opacity=".24" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="80" cy="80" r="62" fill="url(#glass)" opacity=".18"/>
   </g>
-  <circle cx="43" cy="35" r="15" fill="#fff" opacity=".9"/>
-  <circle cx="80" cy="80" r="42" fill="none" stroke="#fff" stroke-opacity=".34" stroke-width="2"/>
-  <circle cx="80" cy="80" r="70" fill="none" stroke="#7b571d" stroke-opacity=".22" stroke-width="2"/>
+  <circle cx="80" cy="80" r="70" fill="none" stroke="#8a601f" stroke-opacity=".22" stroke-width="2"/>
 </svg>
