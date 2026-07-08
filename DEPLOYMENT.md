@@ -38,6 +38,6 @@ The project has `vercel.json` with the same build output and SPA rewrite configu
 ## Before Launch
 
 - Add the final production domain in Vercel.
-- Update canonical and Open Graph URLs if the domain changes from `white-bloom-media.com`.
+- Production domain: `https://whitebloom.media`.
 - Connect the real contact method before enabling the form.
 - Replace coming-soon content blocks when real event videos are ready.

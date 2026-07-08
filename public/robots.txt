@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://white-bloom-media.com/sitemap.xml
+Sitemap: https://whitebloom.media/sitemap.xml
