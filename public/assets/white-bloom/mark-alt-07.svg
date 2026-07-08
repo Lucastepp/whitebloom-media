@@ -1,36 +1,52 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
   <defs>
-    <radialGradient id="base" cx="34%" cy="19%" r="96%">
-      <stop offset="0" stop-color="#fffef2"/>
-      <stop offset="0.18" stop-color="#fff2a8"/>
-      <stop offset="0.39" stop-color="#eac65a"/>
-      <stop offset="0.58" stop-color="#c99331"/>
-      <stop offset="0.78" stop-color="#80511a"/>
-      <stop offset="1" stop-color="#2b190b"/>
+    <radialGradient id="base" cx="34%" cy="33%" r="88%">
+      <stop offset="0" stop-color="#fffef4"/>
+      <stop offset="0.16" stop-color="#fff1a1"/>
+      <stop offset="0.34" stop-color="#efd05d"/>
+      <stop offset="0.52" stop-color="#d4a33a"/>
+      <stop offset="0.69" stop-color="#a86c20"/>
+      <stop offset="0.84" stop-color="#6d3c10"/>
+      <stop offset="1" stop-color="#2a1608"/>
     </radialGradient>
-    <radialGradient id="flare" cx="30%" cy="22%" r="44%">
-      <stop offset="0" stop-color="#ffffff" stop-opacity=".94"/>
-      <stop offset=".26" stop-color="#fff8cf" stop-opacity=".52"/>
-      <stop offset=".62" stop-color="#ffe68b" stop-opacity=".16"/>
-      <stop offset="1" stop-color="#ffe68b" stop-opacity="0"/>
+    <radialGradient id="leftGlow" cx="24%" cy="39%" r="72%">
+      <stop offset="0" stop-color="#fff9d5" stop-opacity=".72"/>
+      <stop offset=".34" stop-color="#ffe98e" stop-opacity=".34"/>
+      <stop offset=".72" stop-color="#dba33b" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#dba33b" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="glass" x1="12" y1="18" x2="148" y2="142" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#fffbea" stop-opacity=".58"/>
-      <stop offset=".48" stop-color="#f4cf63" stop-opacity=".16"/>
-      <stop offset="1" stop-color="#5f3912" stop-opacity=".38"/>
+    <radialGradient id="flare" cx="31%" cy="30%" r="42%">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset=".24" stop-color="#fffce7" stop-opacity=".56"/>
+      <stop offset=".62" stop-color="#ffe88d" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#ffe88d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bottomShade" x1="80" y1="38" x2="80" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4b260a" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#70400f" stop-opacity=".04"/>
+      <stop offset=".74" stop-color="#74410f" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#281307" stop-opacity=".72"/>
     </linearGradient>
+    <radialGradient id="bottomBrown" cx="50%" cy="104%" r="76%">
+      <stop offset="0" stop-color="#281307" stop-opacity=".82"/>
+      <stop offset=".34" stop-color="#70400f" stop-opacity=".44"/>
+      <stop offset=".66" stop-color="#a66b1e" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#a66b1e" stop-opacity="0"/>
+    </radialGradient>
     <clipPath id="clip"><circle cx="80" cy="80" r="70"/></clipPath>
   </defs>
   <circle cx="80" cy="80" r="70" fill="url(#base)"/>
   <g clip-path="url(#clip)">
-    <path d="M14 168 168 14v50L64 168z" fill="#fff7c8" opacity=".34"/>
-    <path d="M-12 102 102 -12h36L-12 138z" fill="#e6b33d" opacity=".2"/>
-    <path d="M94 168 168 94v74z" fill="#4a2b10" opacity=".36"/>
-    <circle cx="48" cy="33" r="48" fill="url(#flare)"/>
-    <circle cx="48" cy="33" r="18" fill="#fffdf2" opacity=".84"/>
-    <circle cx="67" cy="49" r="6" fill="#fff8d0" opacity=".54"/>
-    <path d="M24 44c40-22 84-18 118 18" fill="none" stroke="#fff4bd" stroke-opacity=".24" stroke-width="4" stroke-linecap="round"/>
-    <circle cx="80" cy="80" r="62" fill="url(#glass)" opacity=".18"/>
+    <circle cx="80" cy="80" r="72" fill="url(#leftGlow)"/>
+    <ellipse cx="80" cy="139" rx="82" ry="58" fill="url(#bottomBrown)"/>
+    <circle cx="80" cy="80" r="72" fill="url(#bottomShade)" opacity=".62"/>
+    <path d="M92 172 172 92v80z" fill="#4a260c" opacity=".14"/>
+    <path d="M12 172 172 12v40L58 172z" fill="#fff2a8" opacity=".18"/>
+    <path d="M-16 108 108 -16h56L8 172H-16z" fill="#fffbe2" opacity=".07"/>
+    <circle cx="50" cy="42" r="50" fill="url(#flare)"/>
+    <circle cx="50" cy="42" r="19" fill="#fffdf0" opacity=".88"/>
+    <circle cx="68" cy="58" r="6.5" fill="#ffffff" opacity=".58"/>
+    <path d="M22 54c40-24 86-20 120 14" fill="none" stroke="#fff0ad" stroke-opacity=".22" stroke-width="4" stroke-linecap="round"/>
   </g>
-  <circle cx="80" cy="80" r="70" fill="none" stroke="#8a601f" stroke-opacity=".22" stroke-width="2"/>
+  <circle cx="80" cy="80" r="70" fill="none" stroke="#7b5318" stroke-opacity=".18" stroke-width="2"/>
 </svg>
