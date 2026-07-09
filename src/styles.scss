@@ -746,7 +746,7 @@ h1 {
   width: min(430px, 100%);
   aspect-ratio: 9 / 16;
   justify-self: end;
-  overflow: visible;
+  overflow: hidden;
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(242, 243, 242, 0.68)),
     var(--paper);
@@ -774,7 +774,7 @@ h1 {
 .short-phone::after {
   position: absolute;
   top: 110px;
-  right: -8px;
+  right: 4px;
   width: 6px;
   height: 72px;
   border-radius: 999px;
@@ -792,6 +792,8 @@ h1 {
   border-radius: 20px;
   background: #080808;
   box-shadow: 0 0 0 1px rgba(68, 60, 45, 0.18);
+  transform: scale(1.05);
+  transform-origin: center;
 }
 
 .positioning {
