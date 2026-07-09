@@ -746,38 +746,52 @@ h1 {
   width: min(430px, 100%);
   aspect-ratio: 9 / 16;
   justify-self: end;
-  overflow: hidden;
+  overflow: visible;
   background:
-    linear-gradient(160deg, rgba(23, 21, 18, 0.98), rgba(57, 46, 31, 0.96)),
-    var(--charcoal);
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  border-radius: 28px;
+    linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(242, 243, 242, 0.68)),
+    var(--paper);
+  border: 2px solid rgba(117, 103, 76, 0.28);
+  border-radius: 34px;
   box-shadow:
-    0 34px 90px rgba(68, 60, 45, 0.22),
-    inset 0 0 0 8px rgba(8, 8, 8, 0.95);
+    0 34px 90px rgba(68, 60, 45, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.78),
+    inset 0 0 0 12px rgba(251, 250, 247, 0.94);
 }
 
 .short-phone::before {
   position: absolute;
-  top: 12px;
+  top: 15px;
   left: 50%;
   z-index: 2;
-  width: 88px;
-  height: 18px;
+  width: 92px;
+  height: 8px;
   border-radius: 999px;
-  background: rgba(8, 8, 8, 0.96);
+  background: linear-gradient(90deg, rgba(201, 205, 208, 0.52), rgba(138, 106, 34, 0.36));
   transform: translateX(-50%);
+  content: '';
+}
+
+.short-phone::after {
+  position: absolute;
+  top: 110px;
+  right: -8px;
+  width: 6px;
+  height: 72px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(138, 106, 34, 0.44), rgba(201, 205, 208, 0.46));
+  box-shadow: -442px 64px 0 -1px rgba(138, 106, 34, 0.22);
   content: '';
 }
 
 .short-phone iframe {
   position: absolute;
-  inset: 8px;
-  width: calc(100% - 16px);
-  height: calc(100% - 16px);
+  inset: 28px 14px 16px;
+  width: calc(100% - 28px);
+  height: calc(100% - 44px);
   border: 0;
-  border-radius: 22px;
+  border-radius: 20px;
   background: #080808;
+  box-shadow: 0 0 0 1px rgba(68, 60, 45, 0.18);
 }
 
 .positioning {
@@ -1236,11 +1250,14 @@ h1 {
   }
 
   .short-phone {
-    border-radius: 24px;
+    border-radius: 28px;
   }
 
   .short-phone iframe {
-    border-radius: 18px;
+    inset: 26px 12px 14px;
+    width: calc(100% - 24px);
+    height: calc(100% - 40px);
+    border-radius: 17px;
   }
 
   .site-footer {
