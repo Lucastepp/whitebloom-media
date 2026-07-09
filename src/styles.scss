@@ -785,14 +785,14 @@ h1 {
 
 .short-phone iframe {
   position: absolute;
-  inset: 18px 6px 6px;
-  width: calc(100% - 12px);
-  height: calc(100% - 24px);
+  inset: 28px 14px 16px;
+  width: calc(100% - 28px);
+  height: calc(100% - 44px);
   border: 0;
   border-radius: 20px;
   background: #080808;
   box-shadow: 0 0 0 1px rgba(68, 60, 45, 0.18);
-  transform: scale(1.13);
+  transform: scale(1.03);
   transform-origin: center;
 }
 
@@ -1256,9 +1256,9 @@ h1 {
   }
 
   .short-phone iframe {
-    inset: 18px 6px 6px;
-    width: calc(100% - 12px);
-    height: calc(100% - 24px);
+    inset: 26px 12px 14px;
+    width: calc(100% - 24px);
+    height: calc(100% - 40px);
     border-radius: 17px;
   }
 
