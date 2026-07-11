@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 
 interface FinderOption {
   label: string;
@@ -19,6 +19,7 @@ interface FinderStep {
   styleUrl: './app.scss',
 })
 export class App {
+  private readonly cdr = inject(ChangeDetectorRef);
   private readonly web3FormsEndpoint = 'https://api.web3forms.com/submit';
 
   readonly finderSteps: FinderStep[] = [
@@ -251,6 +252,7 @@ What we need:`;
     } finally {
       window.clearTimeout(timeout);
       this.formSending = false;
+      this.cdr.detectChanges();
     }
   }
 }
