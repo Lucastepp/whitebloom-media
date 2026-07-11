@@ -317,24 +317,38 @@
         <p class="eyebrow">Start here</p>
         <h2 id="contact-title">Tell us about the event.</h2>
         <p>
-          Booking is coming soon. For now, this section explains what information will be
-          needed when the contact channel is connected.
+          Send the event, venue or content brief and White Bloom Media can shape the
+          next step around the date, location and kind of coverage you need.
         </p>
         <ul class="contact-list">
-          <li><strong>Email:</strong> to confirm</li>
-          <li><strong>Phone or WhatsApp:</strong> to confirm</li>
-          <li><strong>Service area:</strong> to confirm</li>
+          <li><strong>Email:</strong>&nbsp;<a href="mailto:hello@whitebloom.media">hello@whitebloom.media</a></li>
+          <li><strong>Phone or WhatsApp:</strong>&nbsp;<a href="tel:+447742793212">+44 7742 793212</a></li>
+          <li><strong>Service area:</strong> Based in the UK. Available across Europe and worldwide.</li>
         </ul>
+        <div class="contact-actions" aria-label="Direct contact options">
+          <a class="button button-primary" href="https://wa.me/447742793212" target="_blank" rel="noopener">Message on WhatsApp</a>
+          <a class="button button-secondary" href="mailto:hello@whitebloom.media">Email the team</a>
+        </div>
       </div>
 
-      <form class="project-form" aria-label="Event content inquiry form">
+      <form
+        class="project-form"
+        aria-label="Event content inquiry form"
+        action="mailto:hello@whitebloom.media?subject=White%20Bloom%20Media%20event%20inquiry"
+        method="post"
+        enctype="text/plain"
+      >
         <div class="field">
           <label for="name">Your name</label>
-          <input id="name" name="name" autocomplete="name" placeholder="Name or company" />
+          <input id="name" name="name" autocomplete="name" placeholder="Name or company" required />
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="Email address" required />
         </div>
         <div class="field">
           <label for="date">Event date</label>
-          <input id="date" name="date" placeholder="Month day, year" />
+          <input id="date" name="event_date" placeholder="Month day, year or multiple dates" />
         </div>
         <div class="field">
           <label for="location">Location or venue</label>
@@ -344,8 +358,86 @@
           <label for="message">What content do you need?</label>
           <textarea id="message" name="message" placeholder="Photo, video, drone, branding, social media, or all of the above"></textarea>
         </div>
-        <button class="button button-primary" type="button" disabled>Booking coming soon</button>
-        <p class="form-note">Coming soon form. A real email, WhatsApp or booking tool still needs to be connected.</p>
+
+        <div class="questionnaire">
+          <p class="questionnaire-intro">Quick questionnaire</p>
+          <div class="field">
+            <label for="client-type">Who are you booking for?</label>
+            <select id="client-type" name="client_type" required>
+              <option value="">Choose one</option>
+              <option>Venue or event space</option>
+              <option>Private host, couple or family</option>
+              <option>Event company with multiple dates</option>
+              <option>Brand, band, DJ or live act</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="event-type">Event type</label>
+            <select id="event-type" name="event_type">
+              <option value="">Choose one</option>
+              <option>Wedding or private celebration</option>
+              <option>Venue content day</option>
+              <option>Live performance or party</option>
+              <option>Corporate, hospitality or brand event</option>
+              <option>Ongoing social media content</option>
+            </select>
+          </div>
+
+          <fieldset class="questionnaire-fieldset">
+            <legend>Schedule</legend>
+            <label class="check-option">
+              <input type="radio" name="schedule" value="One date" />
+              <span>One confirmed date</span>
+            </label>
+            <label class="check-option">
+              <input type="radio" name="schedule" value="Multiple dates" />
+              <span>Multiple event dates</span>
+            </label>
+            <label class="check-option">
+              <input type="radio" name="schedule" value="Ongoing content" />
+              <span>Ongoing monthly content</span>
+            </label>
+            <label class="check-option">
+              <input type="radio" name="schedule" value="Not sure yet" />
+              <span>Not sure yet</span>
+            </label>
+          </fieldset>
+
+          <fieldset class="questionnaire-fieldset">
+            <legend>Coverage needed</legend>
+            <div class="option-grid">
+              <label class="check-option">
+                <input type="checkbox" name="coverage" value="Vertical reels" />
+                <span>Vertical reels</span>
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="coverage" value="Horizontal recap" />
+                <span>Horizontal recap</span>
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="coverage" value="Photography" />
+                <span>Photography</span>
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="coverage" value="Drone" />
+                <span>Drone</span>
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="coverage" value="Branding visuals" />
+                <span>Branding visuals</span>
+              </label>
+              <label class="check-option">
+                <input type="checkbox" name="coverage" value="Social media control" />
+                <span>Social media control</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="button button-primary" type="submit">Send project details</button>
+        <p class="form-note">This opens your email app addressed to hello@whitebloom.media. You can also message on WhatsApp.</p>
       </form>
     </section>
   </main>
