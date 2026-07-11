@@ -1025,6 +1025,20 @@ h1 {
   gap: 14px;
 }
 
+.project-form .button:disabled {
+  opacity: 0.62;
+  cursor: wait;
+  transform: none;
+}
+
+.hidden-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .field {
   display: grid;
   gap: 7px;
@@ -1061,6 +1075,23 @@ h1 {
   color: var(--ink-soft);
   font-size: 0.76rem;
   line-height: 1.55;
+}
+
+.form-status {
+  margin: 0;
+  padding: 12px 14px;
+  color: #2e2414;
+  background: rgba(233, 205, 126, 0.24);
+  border: 1px solid rgba(184, 145, 56, 0.28);
+  border-radius: 8px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.form-status-error {
+  color: #6f231b;
+  background: rgba(180, 57, 43, 0.09);
+  border-color: rgba(180, 57, 43, 0.24);
 }
 
 .project-finder {

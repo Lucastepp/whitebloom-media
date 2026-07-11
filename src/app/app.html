@@ -334,10 +334,16 @@
       <form
         class="project-form"
         aria-label="Event content inquiry form"
-        action="mailto:hello@whitebloom.media?subject=White%20Bloom%20Media%20event%20inquiry"
-        method="post"
-        enctype="text/plain"
+        (submit)="submitProject($event)"
+        novalidate
       >
+        <input type="hidden" name="_subject" value="New White Bloom Media event inquiry" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <label class="hidden-field" aria-hidden="true">
+          Website
+          <input name="website" tabindex="-1" autocomplete="off" />
+        </label>
         <div class="field">
           <label for="name">Your name</label>
           <input id="name" name="name" autocomplete="name" placeholder="Name or company" required />
@@ -361,11 +367,17 @@
             name="message"
             placeholder="Photo, video, drone, branding, social media, or all of the above"
             [value]="messageDraft"
+            required
           ></textarea>
         </div>
 
-        <button class="button button-primary" type="submit">Send project details</button>
-        <p class="form-note">This opens your email app addressed to hello@whitebloom.media. You can also message on WhatsApp.</p>
+        <button class="button button-primary" type="submit" [disabled]="formSending">
+          {{ formSending ? 'Sending...' : 'Send project details' }}
+        </button>
+        @if (formStatus) {
+          <p class="form-status" [class.form-status-error]="formError">{{ formStatus }}</p>
+        }
+        <p class="form-note">This sends the inquiry directly to hello@whitebloom.media. You can also message on WhatsApp.</p>
       </form>
     </section>
 
