@@ -110,6 +110,7 @@ export class App {
   formError = false;
   formSending = false;
   private submittedForm?: HTMLFormElement;
+  private formFallbackTimeout?: number;
 
   get finderComplete(): boolean {
     return this.finderStepIndex === this.finderSteps.length;
@@ -221,6 +222,7 @@ What we need:`;
 
     this.submittedForm = form;
     this.formSending = true;
+    this.formFallbackTimeout = window.setTimeout(() => this.finishFormSubmit(), 4500);
   }
 
   handleFormFrameLoad(): void {
@@ -228,12 +230,23 @@ What we need:`;
       return;
     }
 
-    window.setTimeout(() => {
-      this.submittedForm?.reset();
-      this.messageDraft = '';
-      this.formSending = false;
-      this.formStatus = 'Thanks. Your project details were sent to White Bloom Media.';
-      this.submittedForm = undefined;
-    }, 450);
+    window.setTimeout(() => this.finishFormSubmit(), 450);
+  }
+
+  private finishFormSubmit(): void {
+    if (!this.formSending) {
+      return;
+    }
+
+    if (this.formFallbackTimeout) {
+      window.clearTimeout(this.formFallbackTimeout);
+      this.formFallbackTimeout = undefined;
+    }
+
+    this.submittedForm?.reset();
+    this.messageDraft = '';
+    this.formSending = false;
+    this.formStatus = 'Thanks. Your project details were sent to White Bloom Media.';
+    this.submittedForm = undefined;
   }
 }
