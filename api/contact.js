@@ -47,13 +47,15 @@ module.exports = async function handler(req, res) {
     const result = await response.json().catch(() => ({}));
     const upstreamMessage = typeof result.message === 'string' ? result.message : '';
 
-    if (!response.ok || result.success === false) {
+    const failed = result.success === false || result.success === 'false';
+
+    if (!response.ok || failed) {
       const needsActivation = upstreamMessage.toLowerCase().includes('activation');
 
       return res.status(502).json({
         needsActivation,
         message: needsActivation
-          ? 'The contact form is connected, but the email address still needs to activate delivery.'
+          ? 'The form is connected. Please open hello@whitebloom.media and click the FormSubmit activation link once to enable delivery.'
           : 'The contact form could not be delivered.',
       });
     }
