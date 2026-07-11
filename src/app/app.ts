@@ -19,8 +19,6 @@ interface FinderStep {
   styleUrl: './app.scss',
 })
 export class App {
-  private readonly formEndpoint = '/api/contact';
-
   readonly finderSteps: FinderStep[] = [
     {
       eyebrow: 'Question 01',
@@ -111,6 +109,7 @@ export class App {
   formStatus = '';
   formError = false;
   formSending = false;
+  private submittedForm?: HTMLFormElement;
 
   get finderComplete(): boolean {
     return this.finderStepIndex === this.finderSteps.length;
@@ -209,53 +208,32 @@ What we need:`;
     this.messageDraft = this.finderRecommendation.draft;
   }
 
-  async submitProject(event: SubmitEvent): Promise<void> {
-    event.preventDefault();
-
+  submitProject(event: SubmitEvent): void {
     const form = event.currentTarget as HTMLFormElement;
     this.formStatus = '';
     this.formError = false;
 
     if (!form.checkValidity()) {
+      event.preventDefault();
       form.reportValidity();
       return;
     }
 
-    const formData = new FormData(form);
-    const controller = new AbortController();
-    const timeout = window.setTimeout(() => controller.abort(), 15000);
+    this.submittedForm = form;
     this.formSending = true;
+  }
 
-    try {
-      const response = await fetch(this.formEndpoint, {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(Object.fromEntries(formData.entries())),
-        signal: controller.signal,
-      });
-
-      const result = await response.json().catch(() => ({}));
-
-      if (!response.ok) {
-        throw new Error(typeof result.message === 'string' ? result.message : 'Form delivery failed');
-      }
-
-      form.reset();
-      this.messageDraft = '';
-      this.formStatus =
-        typeof result.message === 'string' ? result.message : 'Thanks. Your project details were sent to White Bloom Media.';
-    } catch (error) {
-      this.formError = true;
-      this.formStatus =
-        error instanceof Error && error.message
-          ? error.message
-          : 'Sorry, the form could not be sent. Please email hello@whitebloom.media or message us on WhatsApp.';
-    } finally {
-      window.clearTimeout(timeout);
-      this.formSending = false;
+  handleFormFrameLoad(): void {
+    if (!this.formSending) {
+      return;
     }
+
+    window.setTimeout(() => {
+      this.submittedForm?.reset();
+      this.messageDraft = '';
+      this.formSending = false;
+      this.formStatus = 'Thanks. Your project details were sent to White Bloom Media.';
+      this.submittedForm = undefined;
+    }, 450);
   }
 }

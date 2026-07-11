@@ -334,6 +334,9 @@
       <form
         class="project-form"
         aria-label="Event content inquiry form"
+        action="https://formsubmit.co/hello@whitebloom.media"
+        method="POST"
+        target="contact-submit-frame"
         (submit)="submitProject($event)"
         novalidate
       >
@@ -379,6 +382,12 @@
         }
         <p class="form-note">This sends the inquiry directly to hello@whitebloom.media. You can also message on WhatsApp.</p>
       </form>
+      <iframe
+        class="submit-frame"
+        name="contact-submit-frame"
+        title="Contact form delivery"
+        (load)="handleFormFrameLoad()"
+      ></iframe>
     </section>
 
     <section class="section project-finder" id="project-finder" aria-labelledby="project-finder-title">
