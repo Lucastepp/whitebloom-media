@@ -1039,15 +1039,6 @@ h1 {
   overflow: hidden;
 }
 
-.submit-frame {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  border: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .field {
   display: grid;
   gap: 7px;

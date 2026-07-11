@@ -337,12 +337,12 @@
         (submit)="submitProject($event)"
         novalidate
       >
-        <input type="hidden" name="_subject" value="New White Bloom Media event inquiry" />
-        <input type="hidden" name="_template" value="table" />
-        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="access_key" value="14bfec5b-36d9-4dfe-ac5c-87806be821a0" />
+        <input type="hidden" name="subject" value="New White Bloom Media event inquiry" />
+        <input type="hidden" name="from_name" value="White Bloom Media Website" />
         <label class="hidden-field" aria-hidden="true">
           Website
-          <input name="website" tabindex="-1" autocomplete="off" />
+          <input name="botcheck" tabindex="-1" autocomplete="off" />
         </label>
         <div class="field">
           <label for="name">Your name</label>
@@ -377,14 +377,8 @@
         @if (formStatus) {
           <p class="form-status" [class.form-status-error]="formError">{{ formStatus }}</p>
         }
-        <p class="form-note">This sends the inquiry directly to hello@whitebloom.media. You can also message on WhatsApp.</p>
+        <p class="form-note">This sends the inquiry directly to White Bloom Media. You can also message on WhatsApp.</p>
       </form>
-      <iframe
-        class="submit-frame"
-        name="contact-submit-frame"
-        title="Contact form delivery"
-        (load)="handleFormFrameLoad()"
-      ></iframe>
     </section>
 
     <section class="section project-finder" id="project-finder" aria-labelledby="project-finder-title">

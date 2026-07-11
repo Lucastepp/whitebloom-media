@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 
 interface FinderOption {
   label: string;
@@ -19,7 +19,7 @@ interface FinderStep {
   styleUrl: './app.scss',
 })
 export class App {
-  private readonly cdr = inject(ChangeDetectorRef);
+  private readonly web3FormsEndpoint = 'https://api.web3forms.com/submit';
 
   readonly finderSteps: FinderStep[] = [
     {
@@ -111,9 +111,6 @@ export class App {
   formStatus = '';
   formError = false;
   formSending = false;
-  private submittedForm?: HTMLFormElement;
-  private deliveryForm?: HTMLFormElement;
-  private formFallbackTimeout?: number;
 
   get finderComplete(): boolean {
     return this.finderStepIndex === this.finderSteps.length;
@@ -212,7 +209,7 @@ What we need:`;
     this.messageDraft = this.finderRecommendation.draft;
   }
 
-  submitProject(event: SubmitEvent): void {
+  async submitProject(event: SubmitEvent): Promise<void> {
     event.preventDefault();
 
     const form = event.currentTarget as HTMLFormElement;
@@ -225,53 +222,35 @@ What we need:`;
     }
 
     const formData = new FormData(form);
-    const deliveryForm = document.createElement('form');
-    deliveryForm.action = 'https://formsubmit.co/hello@whitebloom.media';
-    deliveryForm.method = 'POST';
-    deliveryForm.target = 'contact-submit-frame';
-    deliveryForm.style.display = 'none';
-
-    formData.forEach((value, key) => {
-      const input = document.createElement('input');
-      input.type = 'hidden';
-      input.name = key;
-      input.value = String(value);
-      deliveryForm.appendChild(input);
-    });
-
-    document.body.appendChild(deliveryForm);
-    this.deliveryForm = deliveryForm;
-    this.submittedForm = form;
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 15000);
     this.formSending = true;
-    this.formFallbackTimeout = window.setTimeout(() => this.finishFormSubmit(), 4500);
-    deliveryForm.submit();
-  }
 
-  handleFormFrameLoad(): void {
-    if (!this.formSending) {
-      return;
+    try {
+      const response = await fetch(this.web3FormsEndpoint, {
+        method: 'POST',
+        body: formData,
+        signal: controller.signal,
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if (!response.ok || result.success === false) {
+        throw new Error(typeof result.message === 'string' ? result.message : 'The form could not be sent.');
+      }
+
+      form.reset();
+      this.messageDraft = '';
+      this.formStatus = 'Thanks. Your project details were sent to White Bloom Media.';
+    } catch (error) {
+      this.formError = true;
+      this.formStatus =
+        error instanceof Error && error.message
+          ? error.message
+          : 'Sorry, the form could not be sent. Please email hello@whitebloom.media or message us on WhatsApp.';
+    } finally {
+      window.clearTimeout(timeout);
+      this.formSending = false;
     }
-
-    window.setTimeout(() => this.finishFormSubmit(), 450);
-  }
-
-  private finishFormSubmit(): void {
-    if (!this.formSending) {
-      return;
-    }
-
-    if (this.formFallbackTimeout) {
-      window.clearTimeout(this.formFallbackTimeout);
-      this.formFallbackTimeout = undefined;
-    }
-
-    this.submittedForm?.reset();
-    this.deliveryForm?.remove();
-    this.messageDraft = '';
-    this.formSending = false;
-    this.formStatus = 'Thanks. Your project details were sent to White Bloom Media.';
-    this.submittedForm = undefined;
-    this.deliveryForm = undefined;
-    this.cdr.detectChanges();
   }
 }
