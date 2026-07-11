@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 
 interface FinderOption {
   label: string;
@@ -19,6 +19,8 @@ interface FinderStep {
   styleUrl: './app.scss',
 })
 export class App {
+  private readonly cdr = inject(ChangeDetectorRef);
+
   readonly finderSteps: FinderStep[] = [
     {
       eyebrow: 'Question 01',
@@ -270,5 +272,6 @@ What we need:`;
     this.formStatus = 'Thanks. Your project details were sent to White Bloom Media.';
     this.submittedForm = undefined;
     this.deliveryForm = undefined;
+    this.cdr.detectChanges();
   }
 }
