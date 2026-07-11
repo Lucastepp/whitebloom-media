@@ -51,12 +51,17 @@ module.exports = async function handler(req, res) {
 
     if (!response.ok || failed) {
       const needsActivation = upstreamMessage.toLowerCase().includes('activation');
+      console.warn('FormSubmit delivery failed', {
+        status: response.status,
+        success: result.success,
+        message: upstreamMessage,
+      });
 
       return res.status(502).json({
         needsActivation,
         message: needsActivation
           ? 'The form is connected. Please open hello@whitebloom.media and click the FormSubmit activation link once to enable delivery.'
-          : 'The contact form could not be delivered.',
+          : `The contact form could not be delivered.${upstreamMessage ? ` ${upstreamMessage}` : ''}`,
       });
     }
 
