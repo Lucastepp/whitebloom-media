@@ -110,6 +110,7 @@ export class App {
   formError = false;
   formSending = false;
   private submittedForm?: HTMLFormElement;
+  private deliveryForm?: HTMLFormElement;
   private formFallbackTimeout?: number;
 
   get finderComplete(): boolean {
@@ -210,19 +211,38 @@ What we need:`;
   }
 
   submitProject(event: SubmitEvent): void {
+    event.preventDefault();
+
     const form = event.currentTarget as HTMLFormElement;
     this.formStatus = '';
     this.formError = false;
 
     if (!form.checkValidity()) {
-      event.preventDefault();
       form.reportValidity();
       return;
     }
 
+    const formData = new FormData(form);
+    const deliveryForm = document.createElement('form');
+    deliveryForm.action = 'https://formsubmit.co/hello@whitebloom.media';
+    deliveryForm.method = 'POST';
+    deliveryForm.target = 'contact-submit-frame';
+    deliveryForm.style.display = 'none';
+
+    formData.forEach((value, key) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = key;
+      input.value = String(value);
+      deliveryForm.appendChild(input);
+    });
+
+    document.body.appendChild(deliveryForm);
+    this.deliveryForm = deliveryForm;
     this.submittedForm = form;
     this.formSending = true;
     this.formFallbackTimeout = window.setTimeout(() => this.finishFormSubmit(), 4500);
+    deliveryForm.submit();
   }
 
   handleFormFrameLoad(): void {
@@ -244,9 +264,11 @@ What we need:`;
     }
 
     this.submittedForm?.reset();
+    this.deliveryForm?.remove();
     this.messageDraft = '';
     this.formSending = false;
     this.formStatus = 'Thanks. Your project details were sent to White Bloom Media.';
     this.submittedForm = undefined;
+    this.deliveryForm = undefined;
   }
 }
