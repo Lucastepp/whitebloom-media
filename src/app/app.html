@@ -22,6 +22,19 @@
 
   <main>
     <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-video" aria-hidden="true">
+        <video
+          src="/assets/white-bloom/swarling-manor/hero/swarling-manor-hero.mp4"
+          poster="/assets/white-bloom/swarling-manor/hero/swarling-manor-hero-poster.jpg"
+          autoplay
+          muted
+          [muted]="true"
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
+      </div>
+
       <div class="hero-copy">
         <p class="eyebrow">Professional content and marketing</p>
         <h1 id="hero-title">Content, marketing and social media for events and brands.</h1>
@@ -47,24 +60,6 @@
           horizontal film and photo assets prepared for social and web.
         </p>
       </div>
-
-      <figure class="hero-media">
-        <video
-          src="/assets/white-bloom/swarling-manor/hero/swarling-manor-hero.mp4"
-          poster="/assets/white-bloom/swarling-manor/hero/swarling-manor-hero-poster.jpg"
-          autoplay
-          muted
-          [muted]="true"
-          loop
-          playsinline
-          preload="metadata"
-          aria-label="Muted hero video from Swarling Manor event coverage"
-          fetchpriority="high"
-        ></video>
-        <figcaption class="concept-tag">
-          Recent coverage: Swarling Manor
-        </figcaption>
-      </figure>
     </section>
 
     <section class="section coming-soon-strip" aria-labelledby="coming-soon-title">
@@ -167,12 +162,134 @@
           </div>
         </div>
 
-        <div class="recent-photo-grid" aria-label="Swarling Manor event photo selection">
+        <div class="recent-photo-grid recent-photo-grid-primary" aria-label="Swarling Manor event photo selection">
           <img src="/assets/white-bloom/swarling-manor/photos/swarling-venue-front.jpg" alt="Swarling Manor exterior photographed for venue coverage" loading="lazy" />
           <img src="/assets/white-bloom/swarling-manor/photos/swarling-event-singer.jpg" alt="Performer captured during an outdoor event at Swarling Manor" loading="lazy" />
           <img src="/assets/white-bloom/swarling-manor/photos/swarling-event-service.jpg" alt="Event service moment photographed for social content" loading="lazy" />
           <img src="/assets/white-bloom/swarling-manor/photos/swarling-venue-field.jpg" alt="Swarling Manor grounds photographed for event atmosphere" loading="lazy" />
+          <img src="/assets/white-bloom/swarling-manor/photos/swarling-venue-hall.jpg" alt="Indoor venue space photographed for event coverage" loading="lazy" />
+          <img src="/assets/white-bloom/swarling-manor/photos/swarling-event-dessert.jpg" alt="Dessert detail photographed for event social media" loading="lazy" />
+          <img src="/assets/white-bloom/swarling-manor/photos/swarling-event-guests.jpg" alt="Guests photographed during outdoor event coverage" loading="lazy" />
+          <img src="/assets/white-bloom/swarling-manor/photos/swarling-venue-marquee.jpg" alt="Outdoor marquee and venue atmosphere at Swarling Manor" loading="lazy" />
         </div>
+
+        <details class="photo-more">
+          <summary>Show more photos</summary>
+          <div class="recent-photo-grid recent-photo-grid-more" aria-label="More Swarling Manor event photos">
+            <img src="/assets/white-bloom/swarling-manor/photos/swarling-venue-brick.jpg" alt="Brick architecture at Swarling Manor photographed for venue content" loading="lazy" />
+            <img src="/assets/white-bloom/swarling-manor/photos/swarling-venue-window.jpg" alt="Window and brick detail photographed at Swarling Manor" loading="lazy" />
+            <img src="/assets/white-bloom/swarling-manor/photos/swarling-venue-lawns.jpg" alt="Swarling Manor lawns photographed for event atmosphere" loading="lazy" />
+            <img src="/assets/white-bloom/swarling-manor/photos/swarling-venue-water.jpg" alt="Swarling Manor grounds and water photographed for venue coverage" loading="lazy" />
+            <img src="/assets/white-bloom/swarling-manor/photos/swarling-event-parasol.jpg" alt="Outdoor event parasol and guests photographed for social content" loading="lazy" />
+            <img src="/assets/white-bloom/swarling-manor/photos/swarling-event-hosts.jpg" alt="Event guests and hosts photographed during outdoor coverage" loading="lazy" />
+            <img src="/assets/white-bloom/swarling-manor/photos/swarling-event-singer-close.jpg" alt="Live singer close-up photographed at Swarling Manor" loading="lazy" />
+            <img src="/assets/white-bloom/swarling-manor/photos/swarling-event-venue-wide.jpg" alt="Wide outdoor event view photographed at Swarling Manor" loading="lazy" />
+            <img src="/assets/white-bloom/swarling-manor/photos/swarling-event-pour.jpg" alt="Drinks service photographed for event content" loading="lazy" />
+            <img src="/assets/white-bloom/swarling-manor/photos/swarling-event-glass.jpg" alt="Guest holding a glass during outdoor event coverage" loading="lazy" />
+            <img src="/assets/white-bloom/swarling-manor/photos/swarling-event-group.jpg" alt="Group of event guests photographed for social coverage" loading="lazy" />
+            <img src="/assets/white-bloom/swarling-manor/photos/swarling-event-friends.jpg" alt="Friends photographed at an outdoor event at Swarling Manor" loading="lazy" />
+          </div>
+        </details>
+      </div>
+
+      <div class="reel-section-header">
+        <p class="eyebrow">Core reel formats</p>
+        <h3>Venue, performance and wedding coverage.</h3>
+      </div>
+
+      <div class="film-rail shorts-preview-grid" aria-label="Featured vertical short categories">
+        <article class="film-card">
+          <div>
+            <span>Short 01</span>
+            <h3>Venue properly filmed</h3>
+            <p>The place, the tables, the food and the details that make guests want to be there.</p>
+          </div>
+        </article>
+        <article class="film-card">
+          <div>
+            <span>Short 02</span>
+            <h3>Live performance content</h3>
+            <p>Band, crowd, emotion and the little reactions that make the room feel alive.</p>
+          </div>
+        </article>
+        <article class="film-card">
+          <div>
+            <span>Short 03</span>
+            <h3>Wedding & event coverage</h3>
+            <p>A wider recap of the day: people, movement, music, details and the feeling around the couple.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="short-stories" aria-label="Featured YouTube Shorts">
+        <article class="short-story">
+          <div class="short-copy">
+            <span>Venue film</span>
+            <h3>Your venue, properly filmed.</h3>
+            <p>
+              A venue should feel like a place someone can imagine walking into. We film
+              the tables, food, room tone, entrance moments and small details that make
+              the space sell itself before anyone reads a caption.
+            </p>
+            <a class="button button-secondary" href="https://youtube.com/shorts/LHPWHFsjE18?feature=share" target="_blank" rel="noopener">Watch in 4K on YouTube</a>
+          </div>
+          <div class="short-phone" aria-label="Muted YouTube Short preview: venue film">
+            <iframe
+              src="https://www.youtube.com/embed/LHPWHFsjE18?autoplay=1&mute=1&loop=1&playlist=LHPWHFsjE18&controls=0&modestbranding=1&playsinline=1&rel=0"
+              title="Venue atmosphere short by White Bloom Media"
+              loading="lazy"
+              allow="autoplay; encrypted-media; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
+
+        <article class="short-story short-story-reverse">
+          <div class="short-copy">
+            <span>Live performance</span>
+            <h3>The band, the crowd and the emotional hit.</h3>
+            <p>
+              Live music is more than stage coverage. We look for the exchange between
+              performers and guests: people singing, reacting, getting loud, getting
+              emotional and freezing that room energy into vertical content.
+            </p>
+            <a class="button button-secondary" href="https://youtube.com/shorts/UTQSLa3WvNQ" target="_blank" rel="noopener">Watch in 4K on YouTube</a>
+          </div>
+          <div class="short-phone" aria-label="Muted YouTube Short preview: live performance">
+            <iframe
+              src="https://www.youtube.com/embed/UTQSLa3WvNQ?autoplay=1&mute=1&loop=1&playlist=UTQSLa3WvNQ&controls=0&modestbranding=1&playsinline=1&rel=0"
+              title="Live performance short by White Bloom Media"
+              loading="lazy"
+              allow="autoplay; encrypted-media; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
+
+        <article class="short-story">
+          <div class="short-copy">
+            <span>Wedding recap</span>
+            <h3>The whole event, not only the couple.</h3>
+            <p>
+              Wedding content can hold the couple, the guests, the dance floor, the band
+              and the atmosphere around the day. The goal is a recap that feels social
+              first, emotional and easy to share.
+            </p>
+            <a class="button button-secondary" href="https://youtube.com/shorts/f6kcJblshpc?feature=share" target="_blank" rel="noopener">Watch in 4K on YouTube</a>
+          </div>
+          <div class="short-phone" aria-label="Muted YouTube Short preview: wedding recap">
+            <iframe
+              src="https://www.youtube.com/embed/f6kcJblshpc?autoplay=1&mute=1&loop=1&playlist=f6kcJblshpc&controls=0&modestbranding=1&playsinline=1&rel=0"
+              title="Wedding recap short by White Bloom Media"
+              loading="lazy"
+              allow="autoplay; encrypted-media; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </article>
       </div>
     </section>
 
