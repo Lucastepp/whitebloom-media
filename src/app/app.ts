@@ -122,7 +122,7 @@ export class App {
   }
 
   get finderProgress(): number {
-    return this.finderComplete ? 100 : Math.round(((this.finderStepIndex + 1) / this.finderSteps.length) * 100);
+    return this.finderComplete ? 100 : Math.round((this.finderStepIndex / this.finderSteps.length) * 100);
   }
 
   get finderRecommendation(): { title: string; text: string; support: string[]; draft: string } {
