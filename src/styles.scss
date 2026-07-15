@@ -773,7 +773,7 @@ h1 {
 }
 
 .case-verticals {
-  width: min(1060px, 100%);
+  width: 100%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
