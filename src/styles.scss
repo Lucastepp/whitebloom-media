@@ -179,7 +179,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid transparent;
+  border: 0;
   border-radius: 999px;
   font-family: var(--font-sans);
   font-size: 0.82rem;
@@ -189,8 +189,7 @@ button {
     transform 180ms ease,
     box-shadow 180ms ease,
     color 180ms ease,
-    background 180ms ease,
-    border-color 180ms ease;
+    background 180ms ease;
 }
 
 .button:hover,
@@ -216,7 +215,6 @@ button {
 .header-action {
   color: var(--ink);
   background: linear-gradient(135deg, #fffef9, #ead28d 48%, #b89138);
-  border-color: rgba(138, 106, 34, 0.25);
   box-shadow: 0 15px 38px rgba(138, 106, 34, 0.22);
 }
 
@@ -231,12 +229,10 @@ button {
 .button-secondary {
   color: var(--ink);
   background: rgba(255, 255, 255, 0.72);
-  border-color: rgba(201, 205, 208, 0.55);
 }
 
 .button-secondary:hover,
 .button-secondary:focus-visible {
-  border-color: rgba(138, 106, 34, 0.32);
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(242, 243, 242, 0.86));
 }
 
