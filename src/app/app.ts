@@ -1,5 +1,11 @@
 import { ChangeDetectorRef, Component, inject } from '@angular/core';
 
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
 interface FinderOption {
   label: string;
   detail: string;
@@ -21,6 +27,7 @@ interface FinderStep {
 export class App {
   private readonly cdr = inject(ChangeDetectorRef);
   private readonly web3FormsEndpoint = 'https://api.web3forms.com/submit';
+  private readonly metaCapiEndpoint = '/api/meta-capi';
 
   readonly finderSteps: FinderStep[] = [
     {
@@ -112,6 +119,10 @@ export class App {
   formStatus = '';
   formError = false;
   formSending = false;
+
+  constructor() {
+    this.trackInitialMetaEvents();
+  }
 
   get finderComplete(): boolean {
     return this.finderStepIndex === this.finderSteps.length;
@@ -240,6 +251,7 @@ What we need:`;
         throw new Error(typeof result.message === 'string' ? result.message : 'The form could not be sent.');
       }
 
+      this.trackLeadSubmission(formData);
       form.reset();
       this.messageDraft = '';
       this.formStatus = 'Thanks. Your project details were sent to White Bloom Media.';
@@ -254,5 +266,98 @@ What we need:`;
       this.formSending = false;
       this.cdr.detectChanges();
     }
+  }
+
+  private trackInitialMetaEvents(): void {
+    this.trackMetaEvent('PageView', {
+      customData: {
+        content_name: 'White Bloom Media homepage',
+      },
+    });
+    this.trackMetaEvent('ViewContent', {
+      customData: {
+        content_name: 'White Bloom Media homepage',
+        content_category: 'Event content and marketing services',
+      },
+    });
+  }
+
+  private trackLeadSubmission(formData: FormData): void {
+    const name = String(formData.get('name') || '');
+    const [firstName, ...lastNameParts] = name.trim().split(/\s+/).filter(Boolean);
+
+    this.trackMetaEvent('Lead', {
+      userData: {
+        email: String(formData.get('email') || ''),
+        first_name: firstName || '',
+        last_name: lastNameParts.join(' '),
+      },
+      customData: {
+        content_name: 'White Bloom Media event inquiry',
+        content_category: 'Lead form',
+        lead_type: 'event_content_inquiry',
+      },
+    });
+  }
+
+  private trackMetaEvent(
+    eventName: 'PageView' | 'ViewContent' | 'Lead',
+    options: {
+      customData?: Record<string, string>;
+      userData?: Record<string, string>;
+    } = {},
+  ): void {
+    const eventId = this.createMetaEventId(eventName);
+    const customData = options.customData || {};
+
+    window.fbq?.('track', eventName, customData, { eventID: eventId });
+
+    if (typeof window.fetch === 'function') {
+      void window
+        .fetch(this.metaCapiEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            event_name: eventName,
+            event_id: eventId,
+            event_source_url: window.location.href,
+            user_data: {
+              ...options.userData,
+              fbp: this.getCookie('_fbp'),
+              fbc: this.getMetaClickId(),
+            },
+            custom_data: customData,
+          }),
+          keepalive: true,
+        })
+        .catch(() => {
+          // The form and site should keep working if analytics is blocked or unavailable.
+        });
+    }
+  }
+
+  private createMetaEventId(eventName: string): string {
+    const randomId = crypto.randomUUID?.() || Math.random().toString(36).slice(2);
+    return `wbm.${eventName}.${Date.now()}.${randomId}`;
+  }
+
+  private getCookie(name: string): string {
+    const cookie = document.cookie
+      .split('; ')
+      .find((item) => item.startsWith(`${name}=`));
+
+    return cookie ? decodeURIComponent(cookie.split('=').slice(1).join('=')) : '';
+  }
+
+  private getMetaClickId(): string {
+    const existingFbc = this.getCookie('_fbc');
+    if (existingFbc) return existingFbc;
+
+    const fbclid = new URLSearchParams(window.location.search).get('fbclid');
+    if (!fbclid) return '';
+
+    return `fb.1.${Date.now()}.${fbclid}`;
   }
 }

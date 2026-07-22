@@ -35,6 +35,20 @@ Do not initialize the GitHub repo with a README, `.gitignore` or license because
 
 The project has `vercel.json` with the same build output and SPA rewrite configuration.
 
+## Meta Conversions API
+
+Add the CAPI token in Vercel before relying on server-side Meta events:
+
+```bash
+vercel env add META_CAPI_ACCESS_TOKEN production
+```
+
+Optional test events variable:
+
+```bash
+vercel env add META_TEST_EVENT_CODE production
+```
+
 ## Before Launch
 
 - Add the final production domain in Vercel.
